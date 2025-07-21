@@ -1,103 +1,56 @@
-import Image from "next/image";
+import Image from 'next/image'
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-[#02040A] p-4">
+      <div className="w-full max-w-xl p-6 md:p-8 mx-auto">
+        <div className="flex flex-row items-stretch justify-between">
+          {/* Left: Name, subtitle, links */}
+          <div className="flex flex-col justify-between">
+            <h1 className="text-xl md:text-2xl font-bold text-white">Nikhil Reddy</h1>
+            <div className="flex flex-col">
+              <h2 className="text-white text-m">CS/Finance @{" "}
+                <a href="https://www.stanford.edu/" className="font-bold  text-blue-300 hover:text-blue-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>Stanford</a>
+              </h2>
+              <div className="mt-1 flex space-x-4 text-xs">
+                <a href="https://github.com/nikreddyy" className="font-medium  text-gray-300 hover:text-blue-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>GitHub</a>
+                <a href="https://www.linkedin.com/in/nk-reddy/" className="font-medium  text-gray-300 hover:text-blue-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>LinkedIn</a>
+                <a href="https://x.com/rnikhil61" className="font-medium  text-gray-300 hover:text-blue-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>Twitter</a>
+              </div>
+            </div>
+          </div>
+          {/* Right: Image */}
+          <Image
+            src="/avatar.png"
+            alt="Nikhil Reddy"
+            width={96}
+            height={96}
+            className="rounded-full justify-end-safe"
+            priority
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <hr className="my-5 border-t border-gray-700 w-full" />
+        <p className="text-white text-sm leading-5">Hi, I'm Nikhil! I study Computer Science (AI) at Stanford. Thinking about technology & finance - past experiences in software private equity.</p>
+        <div className="mt-6 space-y-3 text-xs  text-gray-300">
+          <div className="text-sm">
+            <div className="font-bold">Currently:</div>
+            <div className="ml-4">
+              • Summer Analyst at{" "}
+              <a href="https://ftvcapital.com/" className="font-medium  text-gray-300 hover:text-blue-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>FTV Capital</a>
+            </div>
+            <div className="ml-4">
+              • General Partner at{" "}
+              <a href="https://kudlafund.stanford.edu/" className="font-medium  text-gray-300 hover:text-blue-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>Kudla Fund</a>
+            </div>
+          </div>
+          <div className="mt-6 text-sm">
+            Contact:{" "}
+            <span className="font-semibold select-all  text-white">nikreddy [at] stanford [dot] edu</span>
+          </div>
+        </div>
+        <hr className="my-5 border-t border-gray-700 w-full" />
+        <div className="-mt-3 text-xs text-gray-400">© Nikhil Reddy 2025</div>
+      </div>
     </div>
   );
 }

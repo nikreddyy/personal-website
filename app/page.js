@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react"
+import BounceLink from './components/animate-link';
 
 export default function Home() {
 
@@ -17,15 +18,7 @@ export default function Home() {
             <h1 className="text-xl md:text-2xl font-bold text-white">Nikhil Reddy</h1>
             <div className="flex flex-col">
               <h2 className="text-white text-m">CS/Finance @{" "}
-                <a
-                  href="https://www.stanford.edu/"
-                  className="inline-block font-bold text-indigo-500 transition hover:text-purple-600 delay-50 ease-in-out hover:scale-102"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  tabIndex="0"
-                >
-                  Stanford
-                </a>
+                <BounceLink href="https://www.stanford.edu/" className="font-bold text-indigo-500 transition hover:text-purple-600 delay-50 ease-in-out hover:scale-110">Stanford</BounceLink>
               </h2>
               <div className="mt-1 flex space-x-4 text-xs">
                 <a href="https://github.com/nikreddyy" className="font-medium  text-gray-300 hover:text-violet-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>GitHub</a>
@@ -85,7 +78,7 @@ export default function Home() {
 
 
 
-          
+
           <div className="flex flex-col justify-between mt-6 text-sm">
             <div className="flex flex-row">
               <div className="font-bold">Readings<span className="ml-2">➤</span></div>
@@ -96,11 +89,11 @@ export default function Home() {
               </button>
             </div>
             {readingsOpen && (
-              <div className="flex min-h-0 flex-col gap-y-3">
-                <div className="mt-4 p-4 bg-white/10 rounded text-white">
+              <div className="flex min-h-0 flex-col gap-y-1 px-4 sm:px-2 py-5">
+                <div className="-mt-2 p-3 bg-white/8 rounded text-white">
                   1
                 </div>
-                <div className="mt-4 p-4 bg-white/10 rounded text-white">
+                <div className="mt-1 p-3 bg-white/8 rounded text-white">
                   2
                 </div>
               </div>

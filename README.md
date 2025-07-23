@@ -1,1 +1,1 @@
-Personal website developed using NextJS & Tailwind CSS. First coding project - hope you enjoy. Took inspiration from many people in the design of my personal website, such as Shobhit Agarwal, Michael Yu, Brian Zhou, and Aditya Gupta.
+Personal website developed using NextJS & Tailwind CSS. First coding project, so hope you enjoy! Took inspiration from many people in the website design - shout out to Shobhit Agarwal, Michael Yu, Brian Zhou, and Amogh Charturvedi.

@@ -44,24 +44,24 @@ export default function Home() {
             <div className="font-bold">Current:</div>
             <div className="ml-4">
               Summer Analyst at{" "}
-              <a href="https://ftvcapital.com/" className="inline-block font-bold text-indigo-500 hover:text-purple-600 delay-50 ease-in-out hover:scale-102" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>FTV</a>{" "}Capital
+              <BounceLink href="https://ftvcapital.com/" className="inline-block font-bold text-indigo-500 hover:text-purple-600 delay-50 ease-in-out hover:scale-105" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>FTV</BounceLink>{" "}Capital
             </div>
             <div className="ml-4">
               General Partner at{" "}
-              <a href="https://kudlafund.stanford.edu/" className="inline-block font-bold text-indigo-500 hover:text-purple-600 delay-50 ease-in-out hover:scale-102" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>Kudla Fund</a>
+              <BounceLink href="https://kudlafund.stanford.edu/" className="inline-block font-bold text-indigo-500 hover:text-purple-600 delay-50 ease-in-out hover:scale-105" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>Kudla Fund</BounceLink>
             </div>
           </div>
           <div className="text-sm">
             <div className="font-bold">Past:</div>
             <div className="ml-4">
               Consulting work for{" "}
-              <a href="https://www.tpg.com/platforms/growth/tpg-growth" className="inline-block font-bold  text-indigo-500 hover:text-purple-600 delay-50 ease-in-out hover:scale-102" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>TPG</a>
+              <BounceLink href="https://www.tpg.com/platforms/growth/tpg-growth" className="inline-block font-bold  text-indigo-500 hover:text-purple-600 delay-50 ease-in-out hover:scale-105" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>TPG</BounceLink>
               {" "}&{" "}
-              <a href="https://visionfund.com/" className="inline-block font-bold  text-indigo-500 hover:text-purple-600 delay-50 ease-in-out hover:scale-102" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>SoftBank</a>
+              <BounceLink href="https://visionfund.com/" className="inline-block font-bold  text-indigo-500 hover:text-purple-600 delay-50 ease-in-out hover:scale-105" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>SoftBank</BounceLink>
             </div>
             <div className="ml-4">
               Competed on the U.S. Economics{" "}
-              <a href="http://www.wyforum.org/#/" className="inline-block font-bold  text-indigo-500 hover:text-purple-600 delay-50 ease-in-out hover:scale-102" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>Team</a>
+              <BounceLink href="http://www.wyforum.org/#/" className="inline-block font-bold  text-indigo-500 hover:text-purple-600 delay-50 ease-in-out hover:scale-105" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>Team</BounceLink>
             </div>
           </div>
           <div className="text-sm">
@@ -69,8 +69,8 @@ export default function Home() {
             <div className="ml-4">
               • Stock Pitches: 
               UDMY (Short),{" "}
-              <a href="https://drive.google.com/file/d/1aLAJMtVXdV3r1Scap1QE_B057VJtOvjE/view?usp=sharing" className="inline-block font-bold  text-indigo-500 hover:text-purple-600 delay-50 ease-in-out hover:scale-102" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>ASTS</a>{" "}(Long),{" "}
-              <a href="https://drive.google.com/file/d/1pFTcnPqBi-H6rKRk-HTxTsc4S6UHLpoC/view?usp=drive_link" className="inline-block font-bold  text-indigo-500 hover:text-purple-600 delay-50 ease-in-out hover:scale-102" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>TMDX</a>{" "}(Long)
+              <BounceLink href="https://drive.google.com/file/d/1aLAJMtVXdV3r1Scap1QE_B057VJtOvjE/view?usp=sharing" className="inline-block font-bold  text-indigo-500 hover:text-purple-600 delay-50 ease-in-out hover:scale-105" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>ASTS</BounceLink>{" "}(Long),{" "}
+              <BounceLink href="https://drive.google.com/file/d/1pFTcnPqBi-H6rKRk-HTxTsc4S6UHLpoC/view?usp=drive_link" className="inline-block font-bold  text-indigo-500 hover:text-purple-600 delay-50 ease-in-out hover:scale-105" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>TMDX</BounceLink>{" "}(Long)
             </div>
           </div>
 

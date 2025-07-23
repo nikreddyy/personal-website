@@ -7,13 +7,8 @@ export default function BounceLink({ href, children, className = '', ...props })
     <motion.a
       href={href}
       className={`inline-block ${className}`}
-      tabIndex={0}
       whileTap={{ scale: 0.9 }}
-      transition={{
-        type: "spring",
-        duration: 0.1,
-        ease: "easeInOut"
-      }}
+      transition={{ type: 'tween', duration: 0.1, ease: 'easeInOut' }}
       target="_blank"
       rel="noopener noreferrer"
       {...props}

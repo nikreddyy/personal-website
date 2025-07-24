@@ -1,13 +1,26 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { Menu, X } from "lucide-react"
 import BounceLink from './components/animate-link';
+import PortalTooltip from './components/PortalTooltip';
 
 export default function Home() {
 
-  const [readingsOpen, setReadingsOpen] = useState(false)  
+  const [readingsOpen, setReadingsOpen] = useState(false)
+  const [thoughtsOpen, setThoughtsOpen] = useState(false)
+  const [shouldShineThoughts, setShouldShineThoughts] = useState(false);
+  const [shouldShineReadings, setShouldShineReadings] = useState(false);
+
+  useEffect(() => {
+    if (thoughtsOpen) {
+      setShouldShineThoughts(true);
+    }
+    if (readingsOpen) {
+      setShouldShineReadings(true);
+    }
+  }, [thoughtsOpen, readingsOpen]);
 
   return (
     <div className="min-h-screen bg-[#02040A] p-4">
@@ -66,19 +79,16 @@ export default function Home() {
           </div>
           <div className="text-sm">
             <div className="font-bold">Projects:</div>
-            <div className="ml-4">
-              • Stock Pitches: 
-              UDMY (Short),{" "}
-              <BounceLink href="https://drive.google.com/file/d/1aLAJMtVXdV3r1Scap1QE_B057VJtOvjE/view?usp=sharing" className="inline-block font-bold  text-indigo-500 hover:text-purple-600 delay-50 ease-in-out hover:scale-105" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>ASTS</BounceLink>{" "}(Long),{" "}
-              <BounceLink href="https://drive.google.com/file/d/1pFTcnPqBi-H6rKRk-HTxTsc4S6UHLpoC/view?usp=drive_link" className="inline-block font-bold  text-indigo-500 hover:text-purple-600 delay-50 ease-in-out hover:scale-105" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>TMDX</BounceLink>{" "}(Long)
+            <div className="ml-4 flex items-start">
+              <span className="font-bold">•</span>
+              <span className="ml-1.5">
+                Stock Pitches: UDMY (Short),{" "}
+                <BounceLink href="https://drive.google.com/file/d/1aLAJMtVXdV3r1Scap1QE_B057VJtOvjE/view?usp=sharing" className="inline-block font-bold  text-indigo-500 hover:text-purple-600 delay-50 ease-in-out hover:scale-105" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>ASTS</BounceLink>{" "}(Long),{" "}
+                <BounceLink href="https://drive.google.com/file/d/1pFTcnPqBi-H6rKRk-HTxTsc4S6UHLpoC/view?usp=drive_link" className="inline-block font-bold  text-indigo-500 hover:text-purple-600 delay-50 ease-in-out hover:scale-105" target="_blank" rel="noopener noreferrer" tabIndex="0" style={{ transform: "none" }}>TMDX</BounceLink>{" "}(Long)
+              </span>
             </div>
           </div>
-
-
-
-
-
-
+          {/* Reading Section */}
           <div className="flex flex-col justify-between mt-6 text-sm">
             <div className="flex flex-row">
               <div className="font-bold">Readings<span className="ml-2">➤</span></div>
@@ -88,47 +98,96 @@ export default function Home() {
                 {readingsOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
             </div>
-            {readingsOpen && (
+            <div
+              className={`transition-all duration-500 ease-in-out overflow-hidden
+                ${readingsOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}
+              `}
+            >
               <div className="flex min-h-0 flex-col gap-y-1 px-4 sm:px-2 py-5">
-                <div className="-mt-2 p-3 bg-white/8 rounded text-white">
-                  1
+                <div className={`-mt-2 p-3 h-14 flex items-center bg-white/8 rounded text-white${shouldShineReadings ? ' shiny-appear' : ''}`} onAnimationEnd={() => setShouldShineReadings(false)}>
+                  <div className="flex items-center h-full pl-2 w-full" style={{minHeight: '1.75rem'}}>
+                    {/* S Rank badge */}
+                    <div className="w-8 h-8 flex items-center justify-center rounded bg-rose-300 text-white font-bold text-base shadow">S</div>
+                    <div className="h-8 w-px bg-gray-300 ml-6 mr-0" />
+                    <div className="flex space-x-4 ml-6 overflow-x-auto max-w-full hide-scrollbar">
+                      <PortalTooltip tooltip="The Credit Investor's Handbook">
+                        <img src="/s-tier-books/the-credit-investor's-handbook.jpg" alt="The Credit Investor's Handbook" className="h-12 rounded shadow" />
+                      </PortalTooltip>
+                      <PortalTooltip tooltip="The Power of Habit">
+                        <img src="/s-tier-books/the-power-of-habit.jpg" alt="The Power of Habit" className="h-12 rounded shadow" />
+                      </PortalTooltip>
+                    </div>
+                  </div>
                 </div>
-                <div className="mt-1 p-3 bg-white/8 rounded text-white">
-                  2
+                <div className={`mt-1 p-3 h-14 flex items-center bg-white/8 rounded text-white${shouldShineReadings ? ' shiny-appear' : ''}`} onAnimationEnd={() => setShouldShineReadings(false)}>
+                  <div className="flex items-center h-full pl-2 w-full" style={{minHeight: '1.75rem'}}>
+                    {/* A Rank badge */}
+                    <div className="w-8 h-8 flex items-center justify-center rounded bg-yellow-300 text-white font-bold text-base shadow">A</div>
+                    <div className="h-8 w-px bg-gray-300 ml-6 mr-0" />
+                    <div className="flex space-x-4 ml-6 overflow-x-auto max-w-full hide-scrollbar">
+                      <PortalTooltip tooltip="The Caesar's Palace Coup">
+                        <img src="/a-tier-books/caesar's-palace-coup.jpg" alt="The Caesar's Palace Coup" className="h-12 rounded shadow" />
+                      </PortalTooltip>
+                      {/* <img src="/a-tier-books/investment-banking-textbook.jpg" alt="Investment Banking Textbook" className="h-12 rounded shadow" /> */}
+                      <PortalTooltip tooltip="Investment Banking: Valuation, Leveraged Buyouts, and Mergers and Acquisitions">
+                        <img
+                          src="/a-tier-books/investment-banking-textbook.jpg"
+                          alt="Investment Banking: Valuation, Leveraged Buyouts, and Mergers and Acquisitions"
+                          className="h-12 rounded shadow"
+                        />
+                      </PortalTooltip>
+                    </div>
+                  </div>
+                </div>
+                <div className={`mt-1 p-3 h-14 flex items-center bg-white/8 rounded text-white${shouldShineReadings ? ' shiny-appear' : ''}`} onAnimationEnd={() => setShouldShineReadings(false)}>
+                  <div className="flex items-center h-full pl-2 w-full" style={{minHeight: '1.75rem'}}>
+                    {/* B Rank badge */}
+                    <div className="w-8 h-8 flex items-center justify-center rounded bg-sky-300 text-white font-bold text-base shadow">B</div>
+                    <div className="h-8 w-px bg-gray-300 ml-6 mr-0" />
+                    <div className="flex space-x-4 ml-6 overflow-x-auto max-w-full hide-scrollbar"></div>
+                  </div>
+                </div>
+                <div className={`mt-1 p-3 h-14 flex items-center bg-white/8 rounded text-white${shouldShineReadings ? ' shiny-appear' : ''}`} onAnimationEnd={() => setShouldShineReadings(false)}>
+                  <div className="flex items-center h-full pl-2 w-full" style={{minHeight: '1.75rem'}}>
+                    {/* C Rank badge */}
+                    <div className="w-8 h-8 flex items-center justify-center rounded bg-gray-400 text-white font-bold text-base shadow">C</div>
+                    <div className="h-8 w-px bg-gray-300 ml-6 mr-0" />
+                    <div className="flex space-x-4 ml-6 overflow-x-auto max-w-full hide-scrollbar">
+                      <PortalTooltip tooltip="Barbarians at the Gate">
+                        <img src="/c-tier-books/barbarians-at-the-gate.jpg" alt="Barbarians at the Gate" className="h-12 rounded shadow" />
+                      </PortalTooltip>
+                    </div>
+                  </div>
+                </div>
+                <div className={`mt-1 p-3 h-14 flex items-center bg-white/8 rounded text-white${shouldShineReadings ? ' shiny-appear' : ''}`} onAnimationEnd={() => setShouldShineReadings(false)}>
+                  <div className="flex items-center h-full pl-2 w-full" style={{minHeight: '1.75rem'}}>
+                    {/* D Rank badge */}
+                    <div className="w-8 h-8 flex items-center justify-center rounded bg-gray-700 text-white font-bold text-base shadow">D</div>
+                    <div className="h-8 w-px bg-gray-300 ml-6 mr-0" />
+                    <div className="flex space-x-4 ml-6 overflow-x-auto max-w-full hide-scrollbar">
+                    </div>
+                  </div>
                 </div>
               </div>
-            )}
-
-
-
-
-
-
-
-
-
-
-
-
-            <div className="flex flex-row mt-0.5">
-              <div className="font-bold">Coursework<span className="ml-2">➤</span></div>
-              <button className="ml-auto text-indigo-500 text-m hover:text-purple-600 focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu">
-                  <line x1="4" x2="20" y1="12" y2="12" />
-                  <line x1="4" x2="20" y1="6" y2="6" />
-                  <line x1="4" x2="20" y1="18" y2="18" />
-                </svg>
-              </button>
             </div>
             <div className="flex flex-row mt-0.5">
               <div className="font-bold">Thoughts<span className="ml-2">➤</span></div>
-              <button className="ml-auto text-indigo-500 text-m hover:text-purple-600 focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu">
-                  <line x1="4" x2="20" y1="12" y2="12" />
-                  <line x1="4" x2="20" y1="6" y2="6" />
-                  <line x1="4" x2="20" y1="18" y2="18" />
-                </svg>
+              <button className="ml-auto text-indigo-500 text-m hover:text-purple-600 focus:outline-none"
+                onClick={() => setThoughtsOpen((prev) => !prev)}
+              >
+                {thoughtsOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
+            </div>
+            <div
+              className={`transition-all duration-500 ease-in-out overflow-hidden
+                ${thoughtsOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}
+              `}
+            >
+              <div className="flex min-h-0 flex-col gap-y-1 px-4 sm:px-2 py-5">
+                <div className={`-mt-2 p-3 bg-white/8 rounded text-white${shouldShineThoughts ? ' shiny-appear' : ''}`} onAnimationEnd={() => setShouldShineThoughts(false)}>
+                  Coming soon...
+                </div>
+              </div>
             </div>
           </div>
           <div className="mt-6 text-sm">

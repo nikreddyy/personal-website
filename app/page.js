@@ -88,7 +88,7 @@ export default function Home() {
               </span>
             </div>
           </div>
-          {/* Reading Section */}
+          {/* Reading & ThoughtsSection */}
           <div className="flex flex-col justify-between mt-6 text-sm">
             <div className="flex flex-row">
               <div className="font-bold">Readings<span className="ml-2">➤</span></div>
@@ -183,7 +183,7 @@ export default function Home() {
                 ${thoughtsOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}
               `}
             >
-              <div className="flex min-h-0 flex-col gap-y-1 px-4 sm:px-2 py-5">
+              <div className="flex min-h-0 flex-col gap-y-1 px-4 sm:px-2 pt-5">
                 <div className={`-mt-2 p-3 bg-white/8 rounded text-white${shouldShineThoughts ? ' shiny-appear' : ''}`} onAnimationEnd={() => setShouldShineThoughts(false)}>
                   Coming soon...
                 </div>

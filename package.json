@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@floating-ui/react-dom": "^2.1.4",
     "@headlessui/react": "^2.2.4",
     "@tippyjs/react": "^4.2.6",
     "autoprefixer": "^10.4.21",

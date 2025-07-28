@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Menu, X } from "lucide-react"
 import BounceLink from './components/animate-link';
 import PortalTooltip from './components/PortalTooltip';
+import { Analytics } from '@vercel/analytics/next';
 
 export default function Home() {
 
@@ -198,6 +199,7 @@ export default function Home() {
         <hr className="my-5 border-t border-gray-700 w-full" />
         <div className="-mt-3 text-xs text-gray-400">© Nikhil Reddy 2025</div>
       </div>
+      <Analytics />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Menu, X } from "lucide-react"
 import BounceLink from './components/animate-link';
 import PortalTooltip from './components/PortalTooltip';
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function Home() {
 

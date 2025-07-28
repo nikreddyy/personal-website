@@ -12,6 +12,7 @@
     "@floating-ui/react-dom": "^2.1.4",
     "@headlessui/react": "^2.2.4",
     "@tippyjs/react": "^4.2.6",
+    "@vercel/analytics": "^1.5.0",
     "autoprefixer": "^10.4.21",
     "framer-motion": "^12.23.6",
     "lucide-react": "^0.525.0",
